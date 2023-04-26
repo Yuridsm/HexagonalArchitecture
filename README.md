@@ -9,12 +9,17 @@ And, to ensure the quality of the code, we will use the `Test-Driven Development
 
 The project will be developed using the `Typescript` programming language, and the technologies used will be `nodeJS v18.16.0`.
 
+# Requirements
+- `NodeJS` with version `v18.16.0`
+- `Typescript`
+- `ts-jest` with version `^29.1.0`
+
 # How to use
 To use this project, you must follow the following steps:
 
-- Have to
-[insert here the instructions to download and run the application]
-[insert here the instructions to run the tests]
+- Have to download from `git@github.com:Yuridsm/HexagonalArchitecture.git`
+- Run `npm run start`
+- To run tests you have type `npx jest`
 
 # Project structure
 The project will be divided into [insert here the layers of the hexagonal architecture] and will follow the following folder structure:
