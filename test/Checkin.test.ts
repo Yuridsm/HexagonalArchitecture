@@ -2,12 +2,14 @@ import Checkin from "../src/Checkin";
 import Checkout from "../src/Checkout";
 import GetParkedCars from "../src/GetParkedCars";
 import IParkedCarRepository from "../src/IParkedCarRepository";
-import ParkedCarInMemoryRepository from "../src/ParkedCarInMemoryRepository";
 import ParkedCarRepository from "../src/ParkedCarRepository";
+import IConnection from "../src/IConnection";
+import PostgreSQLAdapter from "../src/PostgreSQLAdapter";
 
 test("Deve fazer um checkin", async function () {
-    //const parkedCarRepository: IParkedCarRepository = new ParkedCarRepository();
-    const parkedCarRepository: IParkedCarRepository = new ParkedCarInMemoryRepository();
+    const connection: IConnection = new PostgreSQLAdapter();
+    const parkedCarRepository: IParkedCarRepository = new ParkedCarRepository(connection);
+    // const parkedCarRepository: IParkedCarRepository = new ParkedCarInMemoryRepository();
 
     const checkin = new Checkin(parkedCarRepository);
     const inputCheckin = {
@@ -30,4 +32,6 @@ test("Deve fazer um checkin", async function () {
     const ticket = await checkout.execute(inputCheckout);
     expect(ticket.period).toBe(2);
     expect(ticket.price).toBe(20);
+
+    await connection.close();
 })

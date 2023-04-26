@@ -4,12 +4,15 @@ import GetParkedCars from "./GetParkedCars";
 import Checkout from "./Checkout";
 import IParkedCarRepository from "./IParkedCarRepository";
 import ParkedCarRepository from "./ParkedCarRepository";
+import IConnection from "./IConnection";
+import PostgreSQLAdapter from "./PostgreSQLAdapter";
 
 const app = express();
 
 app.use(express.json());
 
-const parkedCarRepository: IParkedCarRepository = new ParkedCarRepository();
+const connection: IConnection = new PostgreSQLAdapter();
+const parkedCarRepository: IParkedCarRepository = new ParkedCarRepository(connection);
 
 app.post("/checkin", async function(request: Request, response: Response) {
     const checkin = new Checkin(parkedCarRepository);
