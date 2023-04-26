@@ -1,4 +1,5 @@
-# Study project of hexagonal architecture with Clean Architecture and Domain-Driven Design using Test-Driven Development
+# Study project of Hexagonal Architecture with Clean Architecture
+
 This is a study project focused on software architecture. We will use the `Hexagonal Architecture`, also known as Ports and Adapters, which aims to separate business logic from the rest of the application, as well as being easily testable and flexible for changes.
 
 In addition, we will use the principles of `Clean Architecture`, which proposes the separation into layers of responsibilities and the `inversion of dependencies`, making the system more modular, decoupled and easy to maintain.
