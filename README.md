@@ -1,4 +1,4 @@
-# Study project of Hexagonal Architecture with Clean Architecture
+# Study project of `Hexagonal Architecture` with Clean Architecture
 
 This is a study project focused on software architecture. We will use the `Hexagonal Architecture`, also known as Ports and Adapters, which aims to separate business logic from the rest of the application, as well as being easily testable and flexible for changes.
 
